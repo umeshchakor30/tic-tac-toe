@@ -1,0 +1,31 @@
+<!---React and Bable CDN-->
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!---React and Bable CDN-->
+<script type="text/babel">
+function Steps(){
+
+    let [count,setCount]=React.useState(0);
+
+    const increments =()=>{
+       count++;
+       setCount(count);
+       console.log(count);
+    }
+
+    const decrement =()=>{
+       count--;
+       setCount(count);
+    }
+
+    return(
+        <div>
+            <button onClick={increments}>+</button>
+            <button onClick={decrement}>-</button>
+        </div>
+    )
+}
+ReactDOM.render(<Steps/>,document.getElementById("root"));
+</script>
+<div id="root"></div>
